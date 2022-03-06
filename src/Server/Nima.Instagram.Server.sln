@@ -1,27 +1,73 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{706F31F6-9004-4010-B63F-7AD33512D195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nima.Instagram.Server.API", "Core\Nima.Instagram.Server.API\Nima.Instagram.Server.API.csproj", "{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nima.Instagram.Server.API", "Core\Nima.Instagram.Server.API\Nima.Instagram.Server.API.csproj", "{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{A565860B-5B5C-4DB4-ACC0-4CE2842DCB62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nima.Instagram.Shared.Server", "Lib\Nima.Instagram.Shared.Server\Nima.Instagram.Shared.Server.csproj", "{2F089794-F2FA-4B3E-B720-926AE9D25271}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nima.Instagram.Shared.Client", "Lib\Nima.Instagram.Shared.Client\Nima.Instagram.Shared.Client.csproj", "{EC8A5D23-B81F-4CBA-983F-F2722B4F088E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3E52C16-A6AC-46CB-B3CA-2D7540EE84C3}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middleware", "Middleware", "{8EFAF4B9-0112-4B08-B5D5-C910B67949DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{C54225B6-33A2-4450-A538-52E7401DB1DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{DCB3B595-564A-48F8-B1DA-C674808F9B10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nima.Instagram.Server.Middleware.IdentityServer", "Middleware\IdentityServer\Nima.Instagram.Server.Middleware.IdentityServer\Nima.Instagram.Server.Middleware.IdentityServer.csproj", "{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nima.Instagram.Server.Middleware.Gateway", "Middleware\Gateway\Nima.Instagram.Server.Middleware.Gateway\Nima.Instagram.Server.Middleware.Gateway.csproj", "{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F089794-F2FA-4B3E-B720-926AE9D25271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F089794-F2FA-4B3E-B720-926AE9D25271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F089794-F2FA-4B3E-B720-926AE9D25271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F089794-F2FA-4B3E-B720-926AE9D25271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8A5D23-B81F-4CBA-983F-F2722B4F088E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8A5D23-B81F-4CBA-983F-F2722B4F088E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8A5D23-B81F-4CBA-983F-F2722B4F088E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8A5D23-B81F-4CBA-983F-F2722B4F088E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{698DE7A5-DDBD-4FD2-9F4D-F95C2E34FC25} = {706F31F6-9004-4010-B63F-7AD33512D195}
+		{2F089794-F2FA-4B3E-B720-926AE9D25271} = {A565860B-5B5C-4DB4-ACC0-4CE2842DCB62}
+		{EC8A5D23-B81F-4CBA-983F-F2722B4F088E} = {A565860B-5B5C-4DB4-ACC0-4CE2842DCB62}
+		{C54225B6-33A2-4450-A538-52E7401DB1DC} = {8EFAF4B9-0112-4B08-B5D5-C910B67949DE}
+		{DCB3B595-564A-48F8-B1DA-C674808F9B10} = {8EFAF4B9-0112-4B08-B5D5-C910B67949DE}
+		{146A14D3-BE90-47BF-8BE3-ED2EF125AE4F} = {DCB3B595-564A-48F8-B1DA-C674808F9B10}
+		{FE2F5B31-BB87-4BBB-B90B-5858DA4D3CBA} = {C54225B6-33A2-4450-A538-52E7401DB1DC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AEC4EC6-5B1B-41C3-B8D2-D7FD30029333}
 	EndGlobalSection
 EndGlobal
