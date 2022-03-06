@@ -2,12 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\Services\LanguageServices\" />
+    <Folder Include="Core\Repositories\User" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lib\Nima.Instagram.Shared.Client\Nima.Instagram.Shared.Client.csproj" />
+    <ProjectReference Include="..\..\Lib\Nima.Instagram.Shared.Server\Nima.Instagram.Shared.Server.csproj" />
   </ItemGroup>
 
 </Project>

@@ -22,12 +22,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Nima.Instagram.Server.API.Core.Data.Database;
+using Nima.Instagram.Server.API.Core.Data.Database.User;
+using Nima.Instagram.Server.API.Core.Data.Migration;
+using Nima.Instagram.Server.API.Core.Services.UnitOFWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var ConnectionString = builder.Configuration.
+    GetConnectionString("InstagramDBConnectionString");
+builder.Services.AddDbContext<InstagramDB>
+    (options => options.UseSqlServer(ConnectionString));
+builder.Services.AddIdentity<InstagramUser, IdentityRole>()
+    .AddEntityFrameworkStores<InstagramDB>()
+    .AddRoles<IdentityRole>()
+    .AddDefaultTokenProviders();
+builder.Services.AddLogging();
+builder.Services.AddScoped<MigrateDatabase>();
+builder.Services.AddScoped<IUnitOFWorkRepository, UnitOFWorkRepository>();
+
+MigrateDatabase mig = new MigrateDatabase(builder.Services.BuildServiceProvider());
+mig.Opener();
 
 var app = builder.Build();
 
