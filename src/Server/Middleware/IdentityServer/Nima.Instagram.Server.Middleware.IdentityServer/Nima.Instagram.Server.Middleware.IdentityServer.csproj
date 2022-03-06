@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>disablle</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Consent\" />
+    <Folder Include="Controllers\Device\" />
+    <Folder Include="Controllers\Diagnostics\" />
+    <Folder Include="Controllers\Grants\" />
     <Folder Include="Core\Services\" />
   </ItemGroup>
 
