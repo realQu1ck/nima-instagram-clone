@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Consent\" />
-    <Folder Include="Controllers\Device\" />
-    <Folder Include="Controllers\Diagnostics\" />
-    <Folder Include="Controllers\Grants\" />
     <Folder Include="Core\Services\" />
   </ItemGroup>
 

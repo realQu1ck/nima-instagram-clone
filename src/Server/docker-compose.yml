@@ -3,23 +3,18 @@ version: '3.4'
 services:
   instagramdb:
     image: mcr.microsoft.com/mssql/server:2019-latest
-    restart: always
-    container_name: instagramdb
-    ports:
-      - "1433:1433"
-    environment:
-        SA_PASSWORD: "NiMA4332"
-        ACCEPT_EULA: "Y"
+
+  identitydb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
 
   portainer:
-    container_name: portainer
     image: portainer/portainer-ce
-    restart: always
-    ports:
-      - "8000:8000"
-      - "9000:9000"
-    volumes:
-      - portainer_data:/data
-  
+
+  nima.instagram.server.api:
+    image: ${DOCKER_REGISTRY-}nimainstagramserverapi
+    build:
+      context: .
+      dockerfile: Core/Nima.Instagram.Server.API/Dockerfile
+
 volumes:
   portainer_data:

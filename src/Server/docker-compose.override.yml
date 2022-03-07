@@ -1,0 +1,35 @@
+version: '3.4'
+
+services:
+  nima.instagram.server.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  instagramdb:
+    restart: always
+    container_name: instagramdb
+    ports:
+      - "1433:1433"
+    environment:
+        SA_PASSWORD: "NiMA4332"
+        ACCEPT_EULA: "Y"
+
+  identitydb:
+    restart: always
+    container_name: identitydb
+    ports:
+      - "1433:1433"
+    environment:
+        SA_PASSWORD: "NiMASUPERKeY"
+        ACCEPT_EULA: "Y"
+
+  portainer:
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - portainer_data:/data

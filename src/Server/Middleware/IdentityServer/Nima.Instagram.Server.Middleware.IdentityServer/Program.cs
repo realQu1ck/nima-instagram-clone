@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("InstagramIdentityDBConext");
+var connectionString = builder.Configuration.GetConnectionString("InstagramIdentityDBConnectionString");
 builder.Services.AddDbContext<InstagramIdentityDBContext>(option => option.UseSqlServer(connectionString));
 builder.Services.AddIdentity<InstagramIdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<InstagramIdentityDBContext>()
