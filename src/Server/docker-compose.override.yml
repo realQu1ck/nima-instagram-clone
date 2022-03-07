@@ -1,12 +1,6 @@
 version: '3.4'
 
 services:
-  nima.instagram.server.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
   instagramdb:
     restart: always
     container_name: instagramdb
@@ -33,3 +27,32 @@ services:
       - "9000:9000"
     volumes:
       - portainer_data:/data
+
+  nima.instagram.server.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Developments
+      - "ConnectionStrings:InstagramDBConnectionString=Server=instagramdb;Database=InstagramDB;User Id=sa;Password=NiMA4332;"
+    ports:
+      - "8000:80"
+
+  nima.instagram.server.middleware.gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8050:80"
+
+
+  nima.instagram.server.middleware.identityserver:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:InstagramIdentityDBConnectionString=Server=identitydb;Database=InstagramDB;User Id=sa;Password=NiMASUPERKeY;"
+    ports:
+      - "8001:80"
+
+
+  nima.instagram.server.middleware.identitygateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8051:80"
+
