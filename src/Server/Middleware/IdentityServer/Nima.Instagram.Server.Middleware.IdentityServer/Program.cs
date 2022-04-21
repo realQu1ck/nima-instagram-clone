@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Nima.Instagram.Server.Middleware.IdentityServer;
 using Nima.Instagram.Server.Middleware.IdentityServer.Core.Database;
+using Nima.Instagram.Server.Middleware.IdentityServer.Core.Database.Migration;
 using Nima.Instagram.Server.Middleware.IdentityServer.Core.Database.User;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -55,6 +56,10 @@ builder.Services.AddIdentityServer(options =>
     .AddInMemoryApiScopes(Config.ApiScopes)
     .AddInMemoryIdentityResources(Config.IdentityResources)
     .AddDeveloperSigningCredential();
+
+IServiceProvider services = builder.Services.BuildServiceProvider();
+ContextMigrate s = new ContextMigrate(services);
+s.SeedData().Wait();
 
 var app = builder.Build();
 

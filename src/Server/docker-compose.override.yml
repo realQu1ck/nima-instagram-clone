@@ -14,7 +14,7 @@ services:
     restart: always
     container_name: identitydb
     ports:
-      - "1433:1433"
+      - "1432:1432"
     environment:
         SA_PASSWORD: "NiMASUPERKeY"
         ACCEPT_EULA: "Y"
@@ -33,7 +33,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Developments
       - "ConnectionStrings:InstagramDBConnectionString=Server=instagramdb;Database=InstagramDB;User Id=sa;Password=NiMA4332;"
     ports:
-      - "8000:80"
+      - "8010:80"
 
   nima.instagram.server.middleware.gateway:
     environment:
